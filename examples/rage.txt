@@ -1,0 +1,176 @@
+Aim:
+	Aimbot:
+		Enable						= 1
+		VKey						= 6
+		Team check					= 1
+		Auto fire					= 1
+		Hitscan:
+			Enable						= 1
+			Priority (1 - most dmg,
+				2 - closest)			= 1
+			Head						= 1
+			Body						= 1
+			Shoulders					= 1
+			Legs						= 1
+			Toes						= 1
+		Pseudo auto wall			= 1
+		
+		Rage:
+			Enable						= 1
+			Prioritize bone				= 8
+			FOV							= 45
+			Auto scope					= 1
+			Body aim with AWP			= 1
+			Silent aim					= 1
+			Hit chance:
+				Enable						= 1
+				Pistols %					= 40
+				SMGs %						= 10
+				Rifles %					= 20
+				Machineguns %				= 20
+				Shotguns %					= 10
+				Auto-snipers %				= 50
+				SSG08 %						= 40
+				AWP	%						= 40
+				
+		PISTOLS:
+			Prioritize bone				= 8
+			Scale FOV by distance		= 0
+			FOV							= 0.7
+			Speed						= 0.5
+			Ignore enemies in air		= 0
+			Disable when flashed		= 1
+			Silent aim					= 0
+
+		SMGS:
+			Prioritize bone				= 8
+			Scale FOV by distance		= 0
+			FOV							= 1.0
+			Speed						= 0.25
+			Ignore enemies in air		= 1
+			Disable when flashed		= 1
+			Silent aim					= 0
+
+		RIFLES:
+			Prioritize bone				= 8
+			Scale FOV by distance		= 0
+			FOV							= 0.9
+			Speed						= 0.25
+			Ignore enemies in air		= 1
+			Disable when flashed		= 1
+			Silent aim					= 0
+
+		SHOTGUNS:
+			Prioritize bone				= 6
+			Scale FOV by distance		= 0
+			FOV							= 2.0
+			Speed						= 0.5
+			Ignore enemies in air		= 0
+			Disable when flashed		= 1
+			Silent aim					= 0
+
+		AUTO-SNIPERS:
+			Prioritize bone				= 5
+			Scale FOV by distance		= 0
+			FOV							= 1.0
+			Speed						= 0.2
+			Ignore enemies in air		= 1
+			Disable when flashed		= 1
+			Silent aim					= 0
+
+		SSG08:
+			Prioritize bone				= 8
+			Scale FOV by distance		= 0
+			FOV							= 1.1
+			Speed						= 0.8
+			Ignore enemies in air		= 0
+			Disable when flashed		= 0
+			Silent aim					= 0
+
+		AWP:
+			Prioritize bone				= 5
+			Scale FOV by distance		= 0
+			FOV							= 1.6
+			Speed						= 0.8
+			Ignore enemies in air		= 0
+			Disable when flashed		= 0
+			Silent aim					= 0
+
+	RCS:
+		Enable						= 0
+		Always on					= 0
+		Vertical %					= 100
+		Horizontal %				= 100
+
+	Triggerbot:
+		Enable						= 0
+		VKey						= 6
+		Disable when flashed		= 1
+
+	Auto pistol					= 1
+	Backtrack:
+		Enable						= 1
+		Max [1-12]					= 12
+
+Visuals:
+	Team check					= 1
+	Glow ESP:
+		Players						= 1
+		Style (0 - outside,
+			1 - silhouette,
+			2 - inside)				= 0
+		Patch flicker				= 0
+		Color						= [255, 102, 171, 128]
+		Color health based			= 1
+			Color 0 hp					= [255, 0, 0, 153]
+			Color 100 hp				= [0, 255, 0, 153]
+		Show vunerable 				= 1
+		Vunerable color				= [255, 255, 255, 153]
+		Dropped C4					= 1
+		Grenades					= 1
+
+	Model tone:
+		Enable						= 0
+		Color						= [255, 102, 171]
+
+	Show enemies on radar		= 1
+	Update delay (ms)			= 50
+
+Misc:
+	Auto jump:
+		Enable						= 1
+		Legit looking				= 0
+
+	Fake lag:
+		Enable						= 0
+		Toggle VKey (0 - no key)	= 0
+		Ticks lag					= 6
+		Ticks pass					= 2
+		Disable when shooting		= 0
+		Only in air					= 0
+
+	Hitsound:
+		Enable						= 1
+		Style 						= 2
+		Volume %					= 35
+		
+	Nightmode:
+		Enable						= 0
+		Lightscale					= 0.15
+		
+	Skybox name					= ""
+	Enable "name" command		= 1
+	Auto accept					= 1
+	Reveal ranks				= 1
+	Disable post-processing		= 1
+	No smoke					= 1
+	No sniper scope				= 1
+	Visual no recoil
+		(1 - no punch,
+		2 - no recoil)			= 2
+	Max flash %					= 0
+	Viewmodel FOV				= 76
+	View FOV					= 0
+	Load next config vkey		= 114
+	Insult vkey					= 115
+	Bot mount vkey				= 53
