@@ -136,6 +136,9 @@ Compile libcurl, fix library include paths, select "Release" configuration and c
 Otherwise simply select "Release (no curl)" configuration and compile.
 
 # Usage
+* Edit the config to enable/disable features (0 - off, 1 - on)
+* Start the cheat
+
 Config parsing depends on the order of lines (e.g. 1st setting must be "aimbot enable").
 
 You'll most likely get "Warning: MapVirtualKey returned 0" if you break the order of settings.
