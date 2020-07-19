@@ -126,7 +126,7 @@ No ESP.
 * Load next config vkey
 * Insult vkey
 * Bot mount vkey
-  
+
 # Compile
 You can compile with or without "say insult" feature. 
 
@@ -144,3 +144,4 @@ You'll most likely get "Warning: MapVirtualKey returned 0" if you break the orde
 * nuggah for external UserCmd manipulation
 * Forza for signature finder
 * ReactiioN for hitbox enum
+* keybode for bsp parser
