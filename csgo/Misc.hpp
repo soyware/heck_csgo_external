@@ -49,7 +49,7 @@ namespace Features
 			curl_easy_setopt(curl, CURLOPT_URL, "https://www.rappad.co/api/battles/random_insult");
 			curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 1L);
 			curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 2L);
-			curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CURLWriteCallback);
+			curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, &CURLWriteCallback);
 			curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void*)&data);
 			curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 1L);
 
@@ -82,7 +82,7 @@ namespace Features
 			}
 #ifndef NDEBUG
 			else
-				std::cerr << "curl_easy_perform failed: " << curl_easy_strerror(code) << std::endl;
+				std::cout << "curl_easy_perform failed: " << curl_easy_strerror(code) << std::endl;
 #endif // NDEBUG
 			curl_easy_cleanup(curl);
 		}

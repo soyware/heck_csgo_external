@@ -77,49 +77,49 @@ namespace Signatures
 	void Find()
 	{
 		// Unknown entity update received by ProcessSpottedEntityUpda
-		Mem::Read<uintptr_t>(		  Mem::FindSignature("client_panorama.dll", "\x33\xDB\xD3\xE0\x89\x5D\xF4\x09\x84\x97\x00\x00\x00\x00\xA1",	"xxxxxxxxxx????x",	15), g_pClientClassHead);
-		m_pStudioHdr				= Mem::FindSignature("client_panorama.dll", "\x8B\xB6\x00\x00\x00\x00\x85\xF6\x74\x05\x83\x3E\x00\x75\x02\x33\xF6\xF3\x0F\x10\x44\x24", "xx????xxxxxxxxxxxxxxxx", 2);
-		m_Hits						= Mem::FindSignature("client_panorama.dll", "\x8D\x88\x00\x00\x00\x00\xF3\x0F\x11\x45\xE4", "xx??xxxxxxx", 2);
-		m_bDidSmokeEffectPlus		= Mem::FindSignature("client_panorama.dll", "\xC6\x87\x00\x00\x00\x00\x01\x66\x0F\xD6\x45\xF4", "xx??xxxxxxxx", 2);
+		Mem::Read<uintptr_t>(		  Mem::FindSignature("client.dll", "\x33\xDB\xD3\xE0\x89\x5D\xF4\x09\x84\x97\x00\x00\x00\x00\xA1",	"xxxxxxxxxx????x",	15), g_pClientClassHead);
+		m_pStudioHdr				= Mem::FindSignature("client.dll", "\x8B\xB6\x00\x00\x00\x00\x85\xF6\x74\x05\x83\x3E\x00\x75\x02\x33\xF6\xF3\x0F\x10\x44\x24", "xx????xxxxxxxxxxxxxxxx", 2);
+		m_Hits						= Mem::FindSignature("client.dll", "\x8D\x88\x00\x00\x00\x00\xF3\x0F\x11\x45\xE4", "xx??xxxxxxx", 2);
+		m_bDidSmokeEffectPlus		= Mem::FindSignature("client.dll", "\xC6\x87\x00\x00\x00\x00\x01\x66\x0F\xD6\x45\xF4", "xx??xxxxxxxx", 2);
 
-		Attack						= Mem::FindSignature("client_panorama.dll", "\x8B\x0D\x00\x00\x00\x00\x8B\xD6\x8B\xC1\x83\xCA\x01",			"xx????xxxxxxx",	2);
-		Attack2						= Mem::FindSignature("client_panorama.dll", "\x8B\x0D\x00\x00\x00\x00\x8B\xD6\x8B\xC1\x81\xCA\x00\x08",		"xx????xxxxxxxx",	2);
-		Jump						= Mem::FindSignature("client_panorama.dll", "\x8B\x0D\x00\x00\x00\x00\x8B\xD6\x8B\xC1\x83\xCA\x02",			"xx????xxxxxxx",	2);
-		Forward						= Mem::FindSignature("client_panorama.dll", "\x55\x8B\xEC\x51\x53\x8A\x5D\x08",								"xxxxxxxx");
+		Attack						= Mem::FindSignature("client.dll", "\x8B\x0D\x00\x00\x00\x00\x8B\xD6\x8B\xC1\x83\xCA\x01",			"xx????xxxxxxx",	2);
+		Attack2						= Mem::FindSignature("client.dll", "\x8B\x0D\x00\x00\x00\x00\x8B\xD6\x8B\xC1\x81\xCA\x00\x08",		"xx????xxxxxxxx",	2);
+		Jump						= Mem::FindSignature("client.dll", "\x8B\x0D\x00\x00\x00\x00\x8B\xD6\x8B\xC1\x83\xCA\x02",			"xx????xxxxxxx",	2);
+		Forward						= Mem::FindSignature("client.dll", "\x55\x8B\xEC\x51\x53\x8A\x5D\x08",								"xxxxxxxx");
 		Mem::Read<uintptr_t>(Forward + 0x11F, Back);
 		Mem::Read<uintptr_t>(Forward + 0x1D1, Left);
 		Mem::Read<uintptr_t>(Forward + 0x200, Right);
 		Mem::Read<uintptr_t>(Forward + 0xF5, Forward);
 
-		EntityList					= Mem::FindSignature("client_panorama.dll", "\xBE\x01\x00\x00\x00\xBB\x00\x00\x00\x00\x0F\x1F\x00",			"xxxxxx????xxx",	6);
-		Mem::Read<uintptr_t>(		  Mem::FindSignature("client_panorama.dll", "\xA1\x00\x00\x00\x00\x8B\x4D\xFC\x8B\x40\x10",					"x????xxxxxx",		1), GlobalVars);
+		EntityList					= Mem::FindSignature("client.dll", "\xBE\x01\x00\x00\x00\xBB\x00\x00\x00\x00\x0F\x1F\x00",			"xxxxxx????xxx",	6);
+		Mem::Read<uintptr_t>(		  Mem::FindSignature("client.dll", "\xA1\x00\x00\x00\x00\x8B\x4D\xFC\x8B\x40\x10",					"x????xxxxxx",		1), GlobalVars);
 
-		GlowObjectManager			= Mem::FindSignature("client_panorama.dll", "\xA1\x00\x00\x00\x00\xA8\x01\x75\x4B",							"x????xxxx",		1) + 0x4;
-		GameRulesProxy				= Mem::FindSignature("client_panorama.dll", "\x55\x8B\xEC\x8B\x0D\x00\x00\x00\x00\x85\xC9\x74\x07",			"xxxxx????xxxx",	5);
+		GlowObjectManager			= Mem::FindSignature("client.dll", "\xA1\x00\x00\x00\x00\xA8\x01\x75\x4B",							"x????xxxx",		1) + 0x4;
+		GameRulesProxy				= Mem::FindSignature("client.dll", "\x55\x8B\xEC\x8B\x0D\x00\x00\x00\x00\x85\xC9\x74\x07",			"xxxxx????xxxx",	5);
 		//Mem::Read<uintptr_t>(
-		//	Mem::Read<uintptr_t>(	  Mem::FindSignature("client_panorama.dll", "\x00\xA1\x00\x00\x00\x00\x8B\x0C\xB0\x8B\x01\xFF\x50\x00\x46",	"xx????xxxxxxx?x",	2)) + 0x74, RadarBase);	RadarBase += 0x180;
-		s_bOverridePostProcessing	= Mem::FindSignature("client_panorama.dll", "\x80\x3D\x00\x00\x00\x00\x00\x53\x56\x57\x0F\x85",				"xx????xxxxxx",		2);
-		Callback__IsReady			= Mem::FindSignature("client_panorama.dll", "\x56\x8B\x35\x00\x00\x00\x00\x57\x83\xBE",						"xxx????xxx"		) - 0x4;
+		//	Mem::Read<uintptr_t>(	  Mem::FindSignature("client.dll", "\x00\xA1\x00\x00\x00\x00\x8B\x0C\xB0\x8B\x01\xFF\x50\x00\x46",	"xx????xxxxxxx?x",	2)) + 0x74, RadarBase);	RadarBase += 0x180;
+		s_bOverridePostProcessing	= Mem::FindSignature("client.dll", "\x80\x3D\x00\x00\x00\x00\x00\x53\x56\x57\x0F\x85",				"xx????xxxxxx",		2);
+		Callback__IsReady			= Mem::FindSignature("client.dll", "\x56\x8B\x35\x00\x00\x00\x00\x57\x83\xBE",						"xxx????xxx"		) - 0x4;
 		ConfirmedReservationCallback = Mem::Read<uintptr_t>(Callback__IsReady + 0x7);
-		Spec_Show_Xray_Callback		= Mem::FindSignature("client_panorama.dll", "\x53\x56\x57\xBE\x01\x00\x00\x00\xBF",							"xxxx?xxxx"			) + 0x4;
-		SmokeCount					= Mem::FindSignature("client_panorama.dll", "\xA3\x00\x00\x00\x00\x57\x8B\xCB",								"x????xxx",			1);
-		//m_iMaxUsedServerIndex		= Mem::FindSignature("client_panorama.dll", "\xB9\x00\x00\x00\x00\x53\x56\xFF\x50\x18",						"x????xxxxx",		1) + 0x24;
+		Spec_Show_Xray_Callback		= Mem::FindSignature("client.dll", "\x53\x56\x57\xBE\x01\x00\x00\x00\xBF",							"xxxx?xxxx"			) + 0x4;
+		SmokeCount					= Mem::FindSignature("client.dll", "\xA3\x00\x00\x00\x00\x57\x8B\xCB",								"x????xxx",			1);
+		//m_iMaxUsedServerIndex		= Mem::FindSignature("client.dll", "\xB9\x00\x00\x00\x00\x53\x56\xFF\x50\x18",						"x????xxxxx",		1) + 0x24;
 
-		Input						= Mem::FindSignature("client_panorama.dll", "\xB9\x00\x00\x00\x00\xF3\x0F\x11\x04\x24\xFF\x50\x10",			"x????xxxxxxxx",	1);
+		Input						= Mem::FindSignature("client.dll", "\xB9\x00\x00\x00\x00\xF3\x0F\x11\x04\x24\xFF\x50\x10",			"x????xxxxxxxx",	1);
 		m_fMouseActive = Input + 0xE;
 		m_pCommands = Input + 0xF4;
 		m_pVerifiedCommands = m_pCommands + 0x4;
 
-		ServerRankRevealAll			= Mem::FindSignature("client_panorama.dll", "\x8D\x4E\x74\x8B\xC4\xC7\x40\x04\x00\x00\x00\x00\xC7\x00",		"xxxxxxxx????xx",	14);
+		ServerRankRevealAll			= Mem::FindSignature("client.dll", "\x8D\x4E\x74\x8B\xC4\xC7\x40\x04\x00\x00\x00\x00\xC7\x00",		"xxxxxxxx????xx",	14);
 
-		cl_mouseenable				= Mem::FindSignature("client_panorama.dll", "\xB9\x00\x00\x00\x00\xFF\x50\x34\x85\xC0\x75\x10\x8B",			"x????xxxxxxxx",	1);		cl_mouseenableInt = cl_mouseenable + 0x30;
-		weapon_recoil_view_punch_extra = Mem::FindSignature("client_panorama.dll", "\xFF\x90\x00\x05\x00\x00\x8B\x0D\x00\x00\x00\x00\x81\xF9",	"xx?xxxxx????xx",	14);	weapon_recoil_view_punch_extraFloat = weapon_recoil_view_punch_extra + 0x2C;
-		weapon_recoil_scale			= Mem::FindSignature("client_panorama.dll", "\xF3\x0F\x59\xC1\xEB\x3E\x8B\x0D\x00\x00\x00\x00\x81\xF9",		"xxxxxxxx????xx",	14);	weapon_recoil_scaleFloat = weapon_recoil_scale + 0x2C;
-		//weapon_air_spread_scale		= Mem::FindSignature("client_panorama.dll", "\xF3\x0F\x10\x92\x00\x01\x00\x00",								"xxxx?xxx",		22);	weapon_air_spread_scaleFloat = weapon_air_spread_scale + 0x2C;
-		//sv_jump_impulse				= Mem::FindSignature("client_panorama.dll", "\xF3\x0F\x59\x54\x24\x10\x8B\x0D",								"xxxxxxxx",		20);	sv_jump_impulseFloat = sv_jump_impulse + 0x2C;
-		viewmodel_fov				= Mem::FindSignature("client_panorama.dll", "\xF3\x0F\x11\x45\xF8\x81\x75\xF8\x00\x00\x00\x00\xD9",			"xxxxxxxx????x",	8);		viewmodel_fovFloat = viewmodel_fov + 0x2C;
+		cl_mouseenable				= Mem::FindSignature("client.dll", "\xB9\x00\x00\x00\x00\xFF\x50\x34\x85\xC0\x75\x10\x8B",			"x????xxxxxxxx",	1);		cl_mouseenableInt = cl_mouseenable + 0x30;
+		weapon_recoil_view_punch_extra = Mem::FindSignature("client.dll", "\xFF\x90\x00\x05\x00\x00\x8B\x0D\x00\x00\x00\x00\x81\xF9",	"xx?xxxxx????xx",	14);	weapon_recoil_view_punch_extraFloat = weapon_recoil_view_punch_extra + 0x2C;
+		weapon_recoil_scale			= Mem::FindSignature("client.dll", "\xF3\x0F\x59\xC1\xEB\x3E\x8B\x0D\x00\x00\x00\x00\x81\xF9",		"xxxxxxxx????xx",	14);	weapon_recoil_scaleFloat = weapon_recoil_scale + 0x2C;
+		//weapon_air_spread_scale		= Mem::FindSignature("client.dll", "\xF3\x0F\x10\x92\x00\x01\x00\x00",								"xxxx?xxx",		22);	weapon_air_spread_scaleFloat = weapon_air_spread_scale + 0x2C;
+		//sv_jump_impulse				= Mem::FindSignature("client.dll", "\xF3\x0F\x59\x54\x24\x10\x8B\x0D",								"xxxxxxxx",		20);	sv_jump_impulseFloat = sv_jump_impulse + 0x2C;
+		viewmodel_fov				= Mem::FindSignature("client.dll", "\xF3\x0F\x11\x45\xF8\x81\x75\xF8\x00\x00\x00\x00\xD9",			"xxxxxxxx????x",	8);		viewmodel_fovFloat = viewmodel_fov + 0x2C;
 		// reading parent of client's convar cos original (engine one) doesnt have references
-		Mem::Read<uintptr_t>(		  Mem::FindSignature("client_panorama.dll","\x81\xF9\x00\x00\x00\x00\x75\x2B\xF3\x0F",						"xx????xxxx",		2) + 0x1C, mat_force_tonemap_scale);	mat_force_tonemap_scaleFloat = mat_force_tonemap_scale + 0x2C;
+		Mem::Read<uintptr_t>(		  Mem::FindSignature("client.dll","\x81\xF9\x00\x00\x00\x00\x75\x2B\xF3\x0F",						"xx????xxxx",		2) + 0x1C, mat_force_tonemap_scale);	mat_force_tonemap_scaleFloat = mat_force_tonemap_scale + 0x2C;
 
 		#ifndef NDEBUG
 		bSendPacket					= Mem::FindSignature("engine.dll",		"\xB3\x01\x8B\x01\x8B\x40\x10\xFF\xD0\x84\xC0\x74\x0F",				"xxxxxxxxxxxxx"		) + 0x1;

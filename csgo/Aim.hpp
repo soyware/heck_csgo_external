@@ -453,7 +453,8 @@ namespace Features
 					{
 						char szFile[16] = "hitsounds\\0.wav";
 						szFile[10] = '0' + Config::Hitsound::Style;
-						PlaySound(szFile, GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_NODEFAULT);
+						static const HMODULE hMod = GetModuleHandle(NULL);
+						PlaySound(szFile, hMod, SND_FILENAME | SND_ASYNC | SND_NODEFAULT);
 					}
 					prevTotalHits = g_LocalPlayer.m_Hits.m_Size;
 				}

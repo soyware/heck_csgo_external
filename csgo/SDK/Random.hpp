@@ -58,7 +58,7 @@ namespace Random
 		// Bounds-check in release to see if that's the case.
 		if (j >= NTAB || j < 0)
 		{
-			std::clog << "Warning: GenerateRandomNumber had an array overrun.\n";
+			std::cout << "Warning: GenerateRandomNumber had an array overrun.\n";
 			j = (j % NTAB) & 0x7fffffff;
 		}
 

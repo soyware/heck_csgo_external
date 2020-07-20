@@ -156,7 +156,7 @@ inline const char* GetWeaponClassName(int itemDefIndex)
 	case WEAPON_DIVERSION: return "weapon_diversion";
 	case WEAPON_FRAG_GRENADE: return "weapon_frag_grenade";
 	default:
-		std::clog << "Warning: GetWpnClassName got unexpected ItemDefIndex " << itemDefIndex << '\n';
+		std::cout << "Warning: GetWpnClassName got unexpected ItemDefIndex " << itemDefIndex << '\n';
 		return "";
 	}
 }
@@ -242,7 +242,7 @@ inline const char* GetWeaponName(int itemDefIndex)
 	case WEAPON_HAMMER: return "hammer";
 	case WEAPON_SPANNER: return "spanner";
 	default:
-		std::clog << "Warning: GetWpnName got unexpected ItemDefIndex " << itemDefIndex << '\n';
+		std::cout << "Warning: GetWpnName got unexpected ItemDefIndex " << itemDefIndex << '\n';
 		return "";
 	}
 }

@@ -126,14 +126,14 @@ inline bool GetVKeyName(int vkey, char* buffer, int buffersize)
 	UINT vsc = MapVirtualKey(vkey, MAPVK_VK_TO_VSC);
 	if (!vsc)
 	{
-		std::clog << "Warning: MapVirtualKey returned 0\n";
+		std::cout << "Warning: MapVirtualKey returned 0\n";
 		return false;
 	}
 
 	int res = GetKeyNameText((vsc << 16), buffer, buffersize);
 	if (!res)
 	{
-		std::clog << "Warning: GetKeyNameText returned 0\n";
+		std::cout << "Warning: GetKeyNameText returned 0\n";
 		return false;
 	}
 

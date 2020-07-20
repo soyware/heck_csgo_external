@@ -29,12 +29,8 @@ void ErrorExit(const char* szErr)
 	std::cerr << "Error: " << szErr;
 	MessageBeep(MB_ICONERROR);
 	Mem::Detach();
-#ifndef NDEBUG
-	__debugbreak();
-#elif defined(NDEBUG)
-	_getch();
+	std::cin.ignore(2);
 	exit(EXIT_FAILURE);
-#endif // NDEBUG
 }
 
 BOOL WINAPI HandlerRoutine(DWORD dwCtrlType)

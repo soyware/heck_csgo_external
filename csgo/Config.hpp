@@ -333,7 +333,7 @@ namespace Config
 		ClientCmd_Unrestricted(g_bChangingUserCmd ? "unbind mouse1" : "bind mouse1 +attack");
 
 		if (Hitsound::Enable && !ChangeVolume(Hitsound::Volume))
-			std::clog << "Warning: Failed to set hitsound volume.\n";
+			std::cout << "Warning: Failed to set hitsound volume.\n";
 	}
 
 	void PrintHotkeys()
