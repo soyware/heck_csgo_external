@@ -4,9 +4,11 @@ Fully featured CS:GO external cheat.
 # Disclaimer
 That was my first C++ project.
 
-As of publication signatures are probably outdated.
-
 No ESP.
+
+UserCmd features unbind left mouse button.
+
+bSendPacket features don't work on a local server in Release build due to it using m_flNextCmdTime method.
 
 # Features
 ## Aim:
@@ -125,13 +127,13 @@ No ESP.
 * View FOV
 * Load next config vkey
 * Insult vkey
-* Bot mount vkey
+* Bot mount vkey (aka runboost bot)
 
 # Compile
 You can compile with or without "say insult" feature. 
 
 To compile with it you'll need a libcurl. 
-Compile libcurl, fix library include paths, select "Release" configuration and compile a cheat.
+Compile libcurl with windows sspi (or other ssl, but you'll have to set CA cert), fix library include paths, select "Release" configuration and compile a cheat.
 
 Otherwise simply select "Release (no curl)" configuration and compile.
 
