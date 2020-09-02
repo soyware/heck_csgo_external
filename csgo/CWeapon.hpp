@@ -436,7 +436,7 @@ void ReadWeaponsScript()
 class CWeapon
 {
 public:
-	int		m_iItemDefinitionIndex;
+	short	m_iItemDefinitionIndex;
 	float	m_flNextPrimaryAttack;
 	int		m_iClip1;
 	bool	m_bInReload;
