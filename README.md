@@ -1,6 +1,8 @@
 # heck.exe
 Fully featured CS:GO external cheat.
 
+![screenshot](screenshot.png)
+
 # Disclaimer
 That was my first C++ project.
 
