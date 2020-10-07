@@ -141,7 +141,9 @@ namespace Signatures
 		//SendClanTag				= Mem::FindSignature("engine.dll",		"\x53\x56\x57\x8B\xDA\x8B\xF9\xFF\x15",								"xxxxxxxxx"			);
 		//SetInfo_part				= Mem::FindSignature("engine.dll",		"\x8D\x4C\x24\x1C\xE8\x00\x00\x00\x00\x56\x57",						"xxxxx????xx"		);
 		g_bVoiceRecording			= Mem::FindSignature("engine.dll",		"\x80\x3D\x00\x00\x00\x00\x00\x75\x0C\x6A",							"xx????xxxx",		2);
-		ClientCmd_Unrestricted		= Mem::FindSignature("engine.dll",		"\x00\xCC\xCC\xCC\xCC\xCC\xCC\xCC\xCC\xCC\x55\x8B\xEC\x8B\x0D\x00\x00\x00\x00\x81\xF9", "xxxxxxxxxxxxxxx????xx") + 0xA;
+		ClientCmd_Unrestricted		= Mem::FindSignature("engine.dll",
+			"\x55\x8B\xEC\x8B\x0D\x00\x00\x00\x00\x81\xF9\x00\x00\x00\x00\x75\x0C\xA1\x00\x00\x00\x00\x35\x00\x00\x00\x00\xEB\x05\x8B\x01\xFF\x50\x34\x50",
+			"xxxxx????xx????xxx????x????xxxxxxxx");
 		ModelInfoClient				= Mem::FindSignature("engine.dll",		"\x8D\x44\x24\x3C\x8B\xF1\x50\x8D\x44\x24\x3C\xB9",					"xxxxxxxxxxxx"		) + 0xC;
 		bOverlayActivated			= Mem::FindSignature("engine.dll",		"\x50\x51\x8D\x85\x00\x00\x00\x00\xB9",								"xxxx????x",		9) + // CSteam3Client
 									Mem::FindSignature("engine.dll",		"\x88\x86\x00\x00\x00\x00\x5E\x84",									"xx??xxxx",			2);
