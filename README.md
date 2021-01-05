@@ -140,6 +140,7 @@ Compile libcurl with windows sspi (or other ssl, but you'll have to set CA cert)
 Otherwise simply select "Release (no curl)" configuration and compile.
 
 # Usage
+* Copy contents of "[configs](https://github.com/h1ru5/heck_exe/tree/master/configs)" folder into cheat directory
 * Edit the config to enable/disable features (0 - off, 1 - on)
 * Start the cheat
 
