@@ -1,4 +1,4 @@
-# heck.exe
+# heck external
 Fully featured CS:GO external cheat.
 
 ![screenshot](screenshot.png)
