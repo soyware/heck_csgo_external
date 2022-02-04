@@ -4,7 +4,7 @@ Fully featured CS:GO external cheat.
 ![screenshot](screenshot.png)
 
 # Disclaimer
-That was my first C++ project.
+The cheat is outdated, signatures and offsets need to be updated.
 
 No ESP.
 
@@ -132,24 +132,28 @@ bSendPacket features don't work on a local server in Release build due to it usi
 * Bot mount vkey (aka runboost bot)
 
 # Compile
-You can compile with or without "say insult" feature. 
+You can compile with or without the "insult" feature. 
 
-To compile with it you'll need a libcurl. 
-Compile libcurl with windows sspi (or other ssl, but you'll have to set CA cert), fix library include paths, select "Release" configuration and compile a cheat.
+### Compiling with the "insult" feature
+* Compile libcurl with windows SSPI or other SSL (but you'll have to set CA cert)
+* Fix project's include paths
+* Select "Release" project configuration
+* Compile the cheat
 
-Otherwise simply select "Release (no curl)" configuration and compile.
+### Compiling without "insult" feature
+* Select "Release (no curl)" project configuration
+* Compile the cheat
 
 # Usage
-* Copy contents of "[configs](https://github.com/h1ru5/heck_exe/tree/master/configs)" folder into cheat directory
-* Edit the config to enable/disable features (0 - off, 1 - on)
+* Copy contents of "configs" folder into cheat's directory
+* Optionally edit configs to enable/disable features (0 - off, 1 - on)
+* Optionally add different hitsounds by placing the WAV files in "hitsounds" folder and naming them "\*single digit\*.wav" ("1.wav" etc.)
 * Start the cheat
 
-Config parsing depends on the order of lines (e.g. 1st setting must be "aimbot enable").
-
-You'll most likely get "Warning: MapVirtualKey returned 0" if you break the order of settings.
+Config parsing depends on the order of settings (e.g. 1st setting must be "aimbot enable"), you'll most likely get "Warning: MapVirtualKey returned 0" if you break the order.
 
 # Credits
 * nuggah for external UserCmd manipulation
 * Forza for signature finder
 * ReactiioN for hitbox enum
-* keybode for bsp parser
+* keybode for BSP parser
